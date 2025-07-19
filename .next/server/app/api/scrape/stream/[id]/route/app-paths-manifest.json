@@ -1,0 +1,3 @@
+{
+  "/api/scrape/stream/[id]/route": "app/api/scrape/stream/[id]/route.js"
+}
