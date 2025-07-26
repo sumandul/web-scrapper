@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useMutation } from "@tanstack/react-query";
 import ScraperResultDisplay from "@/components/ScraperResultDisplay/page";
 import ChatBox from "../ChatBox/page";
+import LoginModal from "../login/page";
+import LoginButton from "../login/page";
 
 // ✅ UI Components
 const Input = ({ placeholder, value, onChange, className }: any) => (
@@ -138,7 +140,13 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-10 px-4 sm:px-8 md:px-16 flex items-center justify-center">
+    <>
+    
+    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 py-10 px-4 sm:px-8 md:px-16 ">
+      <div className="flex items-center justify-end">
+        <LoginButton />
+      </div>
+      <div className="flex items-center justify-center">
       <div className="max-w-4xl w-full mx-auto space-y-8">
         {/* 🔷 Header */}
         <div className="text-center">
@@ -260,6 +268,9 @@ export default function Home() {
           <ScraperResultDisplay jobResult={jobResult} />
         )}
       </div>
+      </div>
+      
     </main>
+    </>
   );
 }
